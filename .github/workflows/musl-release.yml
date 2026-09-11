@@ -42,8 +42,11 @@ jobs:
           docker run --rm --network none \
             --mount "type=bind,src=$GITHUB_WORKSPACE,dst=/src,readonly" \
             --mount "type=bind,src=$MUSL_WORK,dst=/work" \
-            "$MUSL_IMAGE" sh -c 'python -m pip install --disable-pip-version-check --no-index --no-deps /work/dist/*.whl && python /src/ci/musl/clean_smoke.py' \
-            > "$MUSL_WORK/logs/clean-install.log" 2>&1
+            "$MUSL_IMAGE" sh -ec '
+              exec > /work/logs/clean-install.log 2>&1
+              python -m pip install --disable-pip-version-check --no-index --no-deps /work/dist/*.whl
+              python /src/ci/musl/clean_smoke.py
+            '
 
       - name: Upload build products
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
