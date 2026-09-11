@@ -1,3 +1,5 @@
+> **InsightOS musl fork:** see [build, release and runtime instructions](ci/musl/README.md). The `insightos/musl` branch maintains the tested upstream version.
+
 <div align="center">
   <h1 align="center">Ruckig</h1>
   <h3 align="center">

@@ -16,3 +16,6 @@ doc/html
 local
 patch-*
 target
+
+# Local musl build outputs
+.musl-work/
