@@ -396,3 +396,7 @@ Ruckig is used by over hundred research labs, companies, and open-source project
   year={2021}
 }
 ```
+
+## Reproducible platform builds
+
+See [glibc, musl and macOS build instructions](README.build.md) for pinned source revisions, exact scripts, tool requirements, local commands, CI reproduction and platform support boundaries.
